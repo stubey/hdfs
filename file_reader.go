@@ -8,9 +8,9 @@ import (
 	"os"
 	"time"
 
+	"github.com/golang/protobuf/proto"
 	hdfs "github.com/stubey/hdfs/v2/internal/protocol/hadoop_hdfs"
 	"github.com/stubey/hdfs/v2/internal/rpc"
-	"github.com/golang/protobuf/proto"
 )
 
 // A FileReader represents an existing file or directory in HDFS. It implements
@@ -388,6 +388,10 @@ func (f *FileReader) getBlocks() error {
 
 	f.blocks = resp.GetLocations().GetBlocks()
 	return nil
+}
+
+func (f *FileReader) GetBlocks() error {
+	return f.getBlocks(
 }
 
 func (f *FileReader) getNewBlockReader() error {

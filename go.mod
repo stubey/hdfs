@@ -1,6 +1,7 @@
 module github.com/stubey/hdfs/v2
 
 require (
+	github.com/stubey/hdfs v2.1.2
 	github.com/davecgh/go-spew v1.1.0 // indirect
 	github.com/golang/protobuf v1.1.0
 	github.com/hashicorp/go-uuid v0.0.0-20180228145832-27454136f036 // indirect
